@@ -98,31 +98,62 @@ public class MainActivity extends AppCompatActivity {
             View rowView;
             if (view==null){
                 rowView=li.inflate(R.layout.list_item,viewGroup,false);
+
+                ViewHolder viewHolder=new ViewHolder();
+
+                viewHolder.batch=rowView.findViewById(R.id.studentBatch);
+                viewHolder.name=rowView.findViewById(R.id.studentName);
+                viewHolder.location=rowView.findViewById(R.id.studentLocation);
+                viewHolder.number=rowView.findViewById(R.id.studentNumber);
+                viewHolder.btn=rowView.findViewById(R.id.button);
+
+                rowView.setTag(viewHolder);
+
             } else {
                 rowView=view;
             }
 
             Student currentStudent = studentArrayList.get(i);
 
-            TextView studentName=rowView.findViewById(R.id.studentName);
-            TextView studentBatch=rowView.findViewById(R.id.studentBatch);
-            TextView studentNumber=rowView.findViewById(R.id.studentNumber);
-            TextView studentLocation=rowView.findViewById(R.id.studentLocation);
+            ViewHolder vh= (ViewHolder) rowView.getTag();
 
-            studentName.setText(currentStudent.getName());
-            studentBatch.setText(currentStudent.getBatch());
-            studentNumber.setText(currentStudent.getNumber());
-            studentLocation.setText(currentStudent.getLocation());
+            vh.name.setText(currentStudent.getName());
+            vh.number.setText(currentStudent.getNumber());
+            vh.batch.setText(currentStudent.getBatch());
+            vh.location.setText(currentStudent.getLocation());
 
-            Button button=rowView.findViewById(R.id.button);
-            button.setOnClickListener(new View.OnClickListener() {
+
+            vh.btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //do whatever you wnat to do for button onclick here;
+
                 }
             });
 
+//            TextView studentName=rowView.findViewById(R.id.studentName);
+//            TextView studentBatch=rowView.findViewById(R.id.studentBatch);
+//            TextView studentNumber=rowView.findViewById(R.id.studentNumber);
+//            TextView studentLocation=rowView.findViewById(R.id.studentLocation);
+
+//            studentName.setText(currentStudent.getName());
+//            studentBatch.setText(currentStudent.getBatch());
+//            studentNumber.setText(currentStudent.getNumber());
+//            studentLocation.setText(currentStudent.getLocation());
+
+//            Button button=rowView.findViewById(R.id.button);
+//            button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    //do whatever you wnat to do for button onclick here;
+//                }
+//            });
+
             return rowView;
         }
+    }
+
+    class ViewHolder{
+        TextView name,batch,number,location;
+        Button btn;
     }
 }
