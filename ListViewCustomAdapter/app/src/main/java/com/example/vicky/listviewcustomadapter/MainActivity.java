@@ -99,13 +99,13 @@ public class MainActivity extends AppCompatActivity {
             if (view==null){
                 rowView=li.inflate(R.layout.list_item,viewGroup,false);
 
-                ViewHolder viewHolder=new ViewHolder();
+                ViewHolder viewHolder=new ViewHolder(rowView);
 
-                viewHolder.batch=rowView.findViewById(R.id.studentBatch);
-                viewHolder.name=rowView.findViewById(R.id.studentName);
-                viewHolder.location=rowView.findViewById(R.id.studentLocation);
-                viewHolder.number=rowView.findViewById(R.id.studentNumber);
-                viewHolder.btn=rowView.findViewById(R.id.button);
+//                viewHolder.batch=rowView.findViewById(R.id.studentBatch);
+//                viewHolder.name=rowView.findViewById(R.id.studentName);
+//                viewHolder.location=rowView.findViewById(R.id.studentLocation);
+//                viewHolder.number=rowView.findViewById(R.id.studentNumber);
+//                viewHolder.btn=rowView.findViewById(R.id.button);
 
                 rowView.setTag(viewHolder);
 
@@ -155,5 +155,13 @@ public class MainActivity extends AppCompatActivity {
     class ViewHolder{
         TextView name,batch,number,location;
         Button btn;
+
+        public ViewHolder(View inflatedView){
+            batch=inflatedView.findViewById(R.id.studentBatch);
+            name=inflatedView.findViewById(R.id.studentName);
+            number=inflatedView.findViewById(R.id.studentNumber);
+            location=inflatedView.findViewById(R.id.studentLocation);
+            btn=inflatedView.findViewById(R.id.button);
+        }
     }
 }
