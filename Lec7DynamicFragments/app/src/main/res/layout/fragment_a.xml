@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvFragmentA"
         android:layout_gravity="center"
-        android:textSize="32sp"
-        android:text="Hello I m Fragment A"/>
+        android:textSize="32sp" />
 
 </LinearLayout>
