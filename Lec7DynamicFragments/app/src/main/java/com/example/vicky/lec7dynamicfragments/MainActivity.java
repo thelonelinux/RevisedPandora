@@ -15,20 +15,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn=findViewById(R.id.addBtn);
-        final EditText etAdd= findViewById(R.id.etAdd);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.frameLayoutB,new FragmentB())
+                .commit();
+
+//        Button btn=findViewById(R.id.addBtn);
+//        final EditText etAdd= findViewById(R.id.etAdd);
 
 
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                name=etAdd.getText().toString();
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.frameLayout,new FragmentA(name))
-                        .commit();
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                name=etAdd.getText().toString();
+//                getSupportFragmentManager().beginTransaction()
+//                        .add(R.id.frameLayout,new FragmentA(name))
+//                        .commit();
+//            }
+//        });
     }
 }

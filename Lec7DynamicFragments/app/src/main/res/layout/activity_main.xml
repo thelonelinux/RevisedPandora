@@ -7,27 +7,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:id="@+id/etAdd"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="add"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/addBtn"/>
-
-    </LinearLayout>
-
-
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayoutB"/>
 
     <FrameLayout
         android:layout_width="match_parent"

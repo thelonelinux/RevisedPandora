@@ -8,24 +8,32 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-@SuppressLint("ValidFragment")
 public class FragmentB extends Fragment {
 
-    String name;
 
-    @SuppressLint("ValidFragment")
-    public FragmentB(String name) {
-        this.name = name;
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_b,container,false);
-        TextView tv=view.findViewById(R.id.tvFragmentB);
-//        tv.setText("I was modified in Java");
+
+        Button btn=view.findViewById(R.id.addBtn);
+        final EditText etAdd= view.findViewById(R.id.etAdd);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name=etAdd.getText().toString();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .add(R.id.frameLayout,new FragmentA(name))
+                        .commit();
+            }
+        });
+
         return view;
     }
 }
