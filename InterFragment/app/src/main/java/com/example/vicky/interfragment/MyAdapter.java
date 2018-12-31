@@ -16,11 +16,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myholder> {
 
     Context ctx;
     ArrayList<String> stringArrayList;
-    FragmentActivity act;
-//    Communicator communicator;
+    Communicator communicator;
 
-    public MyAdapter(Context ctx, ArrayList<String> stringArrayList, FragmentActivity act) {
-        this.act = act;
+    public MyAdapter(Context ctx, ArrayList<String> stringArrayList, Communicator act) {
+        this.communicator = act;
         this.ctx = ctx;
         this.stringArrayList = stringArrayList;
     }
@@ -53,10 +52,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myholder> {
                 @Override
                 public void onClick(View view) {
                     String name = stringArrayList.get(getAdapterPosition());
-//                    communicator.doSomething(name);
-                    act.getSupportFragmentManager().beginTransaction()
-                            .add(R.id.container,new FragmentB(stringArrayList.get(getAdapterPosition())))
-                            .commit();
+                    communicator.doSomething(name);
+//                    act.getSupportFragmentManager().beginTransaction()
+//                            .add(R.id.container,new FragmentB(stringArrayList.get(getAdapterPosition())))
+//                            .commit();
                 }
             });
         }

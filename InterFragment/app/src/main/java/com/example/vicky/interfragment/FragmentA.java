@@ -56,9 +56,9 @@ public class FragmentA extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-//        Communicator cm = (Communicator) getActivity();
+        Communicator cm = (Communicator) getActivity();
 
-        MyAdapter myAdapter = new MyAdapter(getContext(),stringArrayList,getActivity());
+        MyAdapter myAdapter = new MyAdapter(getContext(),stringArrayList,cm);
 
         recyclerView.setAdapter(myAdapter);
 
