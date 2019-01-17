@@ -17,8 +17,11 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MyBroadcast">
+        <receiver android:name=".MyBroadcast"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
             </intent-filter>
         </receiver>
