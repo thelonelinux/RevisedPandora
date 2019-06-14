@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final TaskDatabase taskDatabase = new TaskDatabase(this);
         Button btnInsert = findViewById(R.id.btnInsert);
 
