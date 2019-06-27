@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class CategoryView extends AppCompatActivity {
 
-    ArrayList<String> categorylist=new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,21 +21,27 @@ public class CategoryView extends AppCompatActivity {
 
         Intent intent=getIntent();
 
-        categorylist.add("VIDEO");
-        categorylist.add("AUDIO");
-        categorylist.add("NOTEPAD");
-        categorylist.add("PAINT");
-        categorylist.add("CAMERA");
-        categorylist.add("OTHERS");
+        TextView tvVideo=findViewById(R.id.tvVideo);
+        TextView tvAudio=findViewById(R.id.tvAudio);
+        TextView tvNotepad=findViewById(R.id.tvNotepad);
+        TextView tvPaint=findViewById(R.id.tvPaint);
+        TextView tvCamera=findViewById(R.id.tvCamera);
+        TextView tvOthers=findViewById(R.id.tvOthers);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
-                R.layout.list_item,
-                R.id.textView,
-                categorylist);
 
-        ListView listView = findViewById(R.id.listView);
+        tvVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        listView.setAdapter(arrayAdapter);
+                Intent intent = new Intent(CategoryView.this,ViewVideoCategory.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
 
     }
 }

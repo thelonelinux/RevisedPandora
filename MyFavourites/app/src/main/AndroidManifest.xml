@@ -19,10 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CategoryView" />
+        <activity android:name=".CategoryView"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name=".CategoryRem" />
         <activity android:name=".CategoryNew" />
         <activity android:name=".CategoryComplete" />
+        <activity android:name=".ViewVideoCategory" />
     </application>
 
 </manifest>
