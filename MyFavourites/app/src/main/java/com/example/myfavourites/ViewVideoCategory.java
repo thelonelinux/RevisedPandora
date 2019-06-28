@@ -24,10 +24,18 @@ public class ViewVideoCategory extends AppCompatActivity {
 
         viewVideoCategories = new ArrayList<>();
 
-        viewVideoCategories.add(new VideoInfo("Browse", R.drawable.icon));
-        viewVideoCategories.add(new VideoInfo("Br", R.drawable.img_background));
-        viewVideoCategories.add(new VideoInfo("Browseable", R.drawable.icon));
-        viewVideoCategories.add(new VideoInfo("Browse", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0001", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0002", R.drawable.img_background));
+        viewVideoCategories.add(new VideoInfo("Video0003", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0004", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0005", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0006", R.drawable.img_background));
+        viewVideoCategories.add(new VideoInfo("Video0007", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0008", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0009", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0010", R.drawable.img_background));
+        viewVideoCategories.add(new VideoInfo("Video0011", R.drawable.icon));
+        viewVideoCategories.add(new VideoInfo("Video0012", R.drawable.icon));
 
 
 

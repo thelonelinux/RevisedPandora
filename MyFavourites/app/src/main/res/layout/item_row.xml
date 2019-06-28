@@ -4,23 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_gravity="center_horizontal">
+    android:layout_gravity="center_horizontal"
+    android:background="#808080"
+    android:weightSum="7">
 
     <ImageView
         android:id="@+id/thumbnail"
         android:layout_width="116dp"
         android:layout_height="62dp"
+        android:layout_weight="2"
         android:orientation="horizontal"
         android:padding="3dip"
-        android:src="@drawable/icon"/>
+        android:src="@drawable/icon"
+        android:background="#ffffff"
+        android:layout_marginBottom="2dp"/>
 
 
     <TextView
         android:id="@+id/tvItemRow"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="62dp"
+        android:layout_weight="5"
+        android:text="hello"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:background="#a4ecff"
+        android:layout_marginBottom="2dp"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="hello" />
+        android:background="#a4ecff"
+        android:layout_marginBottom="2dp"/>
 
 
 
